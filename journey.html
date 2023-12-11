@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Interstellar Shuttles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff; /* White font color */
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Place the video behind other content */
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            margin-top: 50px; /* Increase space between title and form */
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .milestone {
+            position: absolute;
+            width: 50%;
+            margin-bottom: 20px;
+            text-align: center; /* Center align the milestone text */
+        }
+
+        .milestone p {
+            font-size: 18px;
+            margin-right: 20px;
+            transition: font-size 0.3s; /* Add transition for font size */
+            cursor: pointer; /* Add cursor pointer */
+        }
+
+        .milestone:hover p {
+            font-size: 20px; /* Increase font size on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="background-video">
+        <source src="animatedbackground.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="content">
+        <h1>Our Journey</h1>
+
+        <p>Welcome to Interstellar Shuttles, where our mission is to make intergalactic commuting a reality. In the vastness of space, we provide a reliable and efficient shuttle service from Earth to various planets, making the cosmos more accessible to everyone.</p>
+
+        <p>At Interstellar Shuttles, we understand the challenges of daily life on Earth and the possibilities that await beyond our planet. Whether you're a space enthusiast, a researcher, or someone seeking new horizons, our state-of-the-art shuttles are designed to make your journey comfortable, safe, and memorable.</p>
+
+        <p>Our team of dedicated professionals is committed to pushing the boundaries of space travel. We believe that exploration is the key to understanding and embracing the wonders of the universe. Join us on this extraordinary adventure as we bridge the gap between Earth and the stars.</p>
+
+        <h2>Our Story So Far</h2>
+
+        <div class="timeline">
+            <div class="milestone" style="top: 0;">
+                <p>2005<br>Conceptualization of rockets</p>
+            </div>
+            <div class="milestone" style="top: 80px;">
+                <p>2006<br>$200m Series A funding</p>
+            </div>
+            <div class="milestone" style="top: 160px;">
+                <p>2007<br>Computational fluid dynamics simulations</p>
+            </div>
+            <div class="milestone" style="top: 240px;">
+                <p>2008<br>$650m Series B funding</p>
+            </div>
+            <div class="milestone" style="top: 320px;">
+                <p>2010<br>First Suborbital flight test</p>
+            </div>
+            <div class="milestone" style="top: 400px;">
+                <p>2011<br>Orbital Launch capability</p>
+            </div>
+            <div class="milestone" style="top: 480px;">
+                <p>2012<br>Reusable Rocket technology with precision landing</p>
+            </div>
+            <div class="milestone" style="top: 560px;">
+                <p>2012<br>Manufacturing of our lead rocket "Luna"</p>
+            </div>
+            <div class="milestone" style="top: 640px;">
+                <p>2014<br>Luna's 30th flight</p>
+            </div>
+            <div class="milestone" style="top: 720px;">
+                <p>2015<br>First autonomous flight to Mars</p>
+            </div>
+            <div class="milestone" style="top: 800px;">
+                <p>2018<br>30 Launch ports worldwide</p>
+            </div>
+            <div class="milestone" style="top: 880px;">
+                <p>2023<br>Becoming the leading interstellar shuttle service</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

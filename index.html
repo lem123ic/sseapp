@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Navigator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff; /* White font color */
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Place the video behind other content */
+        }
+
+        header {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1; /* Place the header in front of the video */
+        }
+
+        nav {
+            position: fixed;
+            top: 80px; /* Adjust the top position to avoid covering text */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 15px;
+            z-index: 2; /* Place the navigation bar in front of the video */
+            text-align: center;
+        }
+
+        nav select {
+            color: #fff; /* White font color for dropdown menu */
+            background-color: transparent; /* Transparent background for dropdown menu */
+            border: none;
+            padding: 12px; /* Slightly larger padding for dropdown menu */
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 16px; /* Larger font size for dropdown menu */
+            appearance: none; /* Remove default arrow in some browsers */
+            border-radius: 0; /* Remove default border-radius */
+            border: none; /* Remove default border */
+            border-bottom: 2px solid #fff; /* White bottom border for dropdown menu */
+            transition: border-width 0.3s; /* Add transition for underline */
+            width: 200px; /* Set initial width for animation */
+            text-align-last: center; /* Center align the text in the dropdown */
+        }
+
+        nav select:hover {
+            border-width: 4px; /* Adjust the border width on hover */
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px 0; /* Add some space between sections */
+        }
+
+        h2 {
+            text-align: center; /* Center the heading */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            padding: 10px;
+            color: #fff; /* White font color for footer */
+            text-align: center;
+            z-index: 2; /* Place the footer in front of the video */
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto; /* Center the image */
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="background-video">
+        <source src="animatedbackground.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>Welcome to Nova Navigator</h1>
+        <p>Exploring the Universe in the era of space travel</p>
+        <p>We're here to help you get to that all-important
+          intergalactic meeting on time!</p>
+	<br>
+	<p>A leading space shuttle service since 2023</p> 
+    </header>
+
+    <nav>
+        <select onchange="navigateToPage(this)">
+          <option value="#" selected>Home</option>
+	  <option value="journey.html">About us</option>
+	  <option value="details.html">Create a Travel Card</option>
+            <option value="traffic.html">Asteroid Traffic</option>
+            <option value="destination.html">Navigator</option>
+        </select>
+    </nav>
+
+    <footer>
+      <p>&copy; Lucas Merlino, Lem123</p>
+    
+    </footer>
+
+    <script>
+        function navigateToPage(select) {
+            var selectedOption = select.options[select.selectedIndex];
+            if (selectedOption.value !== "#") {
+                window.location.href = selectedOption.value;
+            }
+        }
+    </script>
+
+</body>
+</html>

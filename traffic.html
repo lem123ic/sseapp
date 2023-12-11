@@ -1,0 +1,153 @@
+<!-- asteroidtraffic.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asteroid Traffic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff; /* White font color */
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Place the video behind other content */
+        }
+
+        header {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1; /* Place the header in front of the video */
+        }
+
+        nav {
+            position: fixed;
+            bottom: 20px; /* Adjust the bottom position */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: transparent; /* Transparent background */
+            z-index: 2; /* Place the navigation bar in front of the video */
+            text-align: center;
+        }
+
+        nav select {
+            color: #fff; /* White font color for dropdown menu */
+            background-color: transparent; /* Transparent background for dropdown menu */
+            border: none;
+            padding: 12px; /* Slightly larger padding for dropdown menu */
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 16px; /* Larger font size for dropdown menu */
+            appearance: none; /* Remove default arrow in some browsers */
+            border-radius: 0; /* Remove default border-radius */
+            border: none; /* Remove default border */
+            border-bottom: 2px solid #fff; /* White bottom border for dropdown menu */
+            transition: border-width 0.3s; /* Add transition for underline */
+            text-align-last: center; /* Center align the text in the dropdown */
+        }
+
+        nav select:hover {
+            border-width: 4px; /* Adjust the border width on hover */
+        }
+
+        section {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            margin-top: 100px; /* Increase space between title and asteroids */
+            display: flex;
+            justify-content: space-around;
+        }
+
+        h2 {
+            text-align: center; /* Center the heading */
+        }
+
+        div {
+            text-align: center;
+            margin-top: 20px; /* Increase space between information and animation */
+        }
+
+        section img {
+            width: 300px; /* Set a specific width for the images */
+            height: auto;
+            display: block;
+            margin: 20px auto; /* Center the image */
+            transition: transform 0.3s; /* Add transition for image zoom on hover */
+        }
+
+        section img:hover {
+            transform: scale(1.2); /* Zoom in on hover */
+        }
+
+        section div {
+            width: 300px; /* Set a specific width for the information div */
+        }
+
+        section p {
+            margin: 10px 0; /* Adjust the margin for the paragraphs within the information div */
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="background-video">
+        <source src="animatedbackground.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>Asteroid Traffic</h1>
+        <p>Beware of the following asteroids on those deep space highways</p>
+	<br>
+	<br>
+    </header>
+
+    <section>
+        <div>
+            <h2>QC5</h2>
+            <img src="XB44.jpg" alt="Image of QC5">
+            <div>
+                <p>Speed: 27,327 km/h</p>
+                <p>Length: 79 feet</p> 
+                <p>Closest Earth Approach: 4,000,000 km</p>
+            </div>
+        </div>
+
+        <div>
+            <h2>XB4</h2>
+            <img src="XB4.jpg" alt="Image of XB4">
+            <div>
+                <p>Speed: 25,792 km/h</p>
+                <p>Length: 26 feet</p>
+                <p>Closest Earth Approach: 297,000 km</p>
+            </div>
+        </div>
+    </section>
+
+    <nav>
+        <select onchange="location = this.value;">
+            <option value="index.html">Home</option>
+            <option value="#">Your Details</option>
+            <option value="traffic.html">Asteroid Traffic</option>
+            <option value="#">Navigator</option>
+        </select>
+    </nav>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose your destination and rocketship</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff; /* White font color */
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Place the video behind other content */
+        }
+
+        h1 {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1; /* Place the title in front of the video */
+        }
+
+        div {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        img {
+            width: 300px; /* Set a specific width for the images */
+            height: auto;
+            display: block;
+            margin: 20px auto; /* Center the image */
+            /* You can add additional styling as needed */
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="background-video">
+        <source src="animatedbackground.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>Choose your destination and rocketship</h1>
+
+    <div>
+        <h2>Rocketship 1</h2>
+        <img src="#" alt="Rocketship 1">
+        <!-- Replace "#" with the actual URL of the image -->
+    </div>
+
+    <div>
+        <h2>Rocketship 2</h2>
+        <img src="#" alt="Rocketship 2">
+        <!-- Replace "#" with the actual URL of the image -->
+    </div>
+
+    <div>
+        <h2>Rocketship 3</h2>
+        <img src="#" alt="Rocketship 3">
+        <!-- Replace "#" with the actual URL of the image -->
+    </div>
+
+</body>
+</html>

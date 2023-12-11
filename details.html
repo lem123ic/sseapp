@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Space Travel Card - Interstellar Shuttles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff; /* White font color */
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Place the video behind other content */
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            margin-top: 50px; /* Increase space between title and form */
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Ensure content is above video background */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #fff; /* White font color */
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #fff; /* White font color */
+        }
+
+        table {
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: #fff; /* White font color */
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd; /* Light gray border */
+        }
+
+        th {
+            background-color: transparent; /* Transparent background for header */
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff; /* White font color */
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for button */
+            color: #111; /* Dark font color for button */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s; /* Add transition for background color */
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.7); /* Slightly darker white on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop id="background-video">
+        <source src="animatedbackground.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="content">
+        <h1>Create Your Space Travel Card</h1>
+        <br>
+        <h2>Price</h2>
+
+        <table>
+            <tr>
+                <th>Passenger Type</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Adults (25-65)</td>
+                <td>$8300</td>
+            </tr>
+            <tr>
+                <td>Youth (18-24)</td>
+                <td>$7100</td>
+            </tr>
+            <tr>
+                <td>Students</td>
+                <td>$4800</td>
+            </tr>
+            <tr>
+                <td>Children (5-18)</td>
+                <td>$3400</td>
+            </tr>
+            <tr>
+                <td>Kids under 3</td>
+                <td>Free</td>
+            </tr>
+            <tr>
+                <td>Seniors (65+)</td>
+                <td>$7200</td>
+            </tr>
+        </table>
+
+        <form id="travelCardForm" action="confirmation.html" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required min="0">
+
+            <label for="student">Student:</label>
+            <select id="student" name="student">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="payment">Payment Plan:</label>
+            <select id="payment" name="payment">
+                <option value="monthly">Monthly</option>
+                <option value="yearly">Yearly</option>
+            </select>
+
+            <label for="coordinates">Home Coordinates:</label>
+            <input type="text" id="coordinates" name="coordinates" required>
+
+            <!-- Submit and Cancel buttons -->
+            <div class="options">
+                <button type="submit">Book Now</button>
+                <button class="cancel" onclick="cancelForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function cancelForm() {
+            // Reset the form
+            document.getElementById("travelCardForm").reset();
+        }
+    </script>
+
+</body>
+</html>
