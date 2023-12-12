@@ -74,15 +74,7 @@
         <h1>Choose your destination</h1>
 
         <h3>Neptune</h3>
-        <button onclick="fetchPlanetInfo('nepinfo.html')">Visit Neptune</button>
-
-        <h3>Mars</h3>
-        <button onclick="fetchPlanetInfo('Mars')">Visit Mars</button>
-
-        <h3>Venus</h3>
-        <button onclick="fetchPlanetInfo('Venus')">Visit Venus</button>
-
-        <!-- Add more planets following the same pattern -->
+        <button onclick="fetchPlanetInfo('Neptune')">Visit Neptune</button>
 
         <div>
             <button onclick="window.location.href='index.html'">Cancel</button>
@@ -105,7 +97,7 @@
                 const data = await response.json();
                 const planetInfo = data[0];
 
-                window.location.href = `neptune_info.html?name=${planetInfo.name}&axis=${planetInfo.semi_major_axis}&distance=${planetInfo.distance_light_year}&temperature=${planetInfo.host_star_temperature}`;
+                window.location.href = `nepinfo.html?name=${planetInfo.name}&axis=${planetInfo.semi_major_axis}&distance=${planetInfo.distance_light_year}&temperature=${planetInfo.host_star_temperature}`;
             } catch (error) {
                 console.error(`Error fetching ${planetName} info:`, error);
             }
