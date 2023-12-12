@@ -96,6 +96,7 @@
             background-color: rgba(255, 255, 255, 0.7); /* Slightly darker white on hover */
         }
     </style>
+    <script src="details.js" defer></script>
 </head>
 <body>
 
@@ -168,9 +169,12 @@
                 <button class="cancel" onclick="cancelForm()">Cancel</button>
             </div>
         </form>
+
+        <!-- Welcome message -->
+        <div id="welcomeMessage" style="display: none;">
+            <h2>Welcome back, <span id="userName"></span>!</h2>
+        </div>
     </div>
-    <br>
- 
 
     <script>
         function cancelForm() {
@@ -181,3 +185,4 @@
 
 </body>
 </html>
+
