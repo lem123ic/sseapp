@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyage to Neptune</title>
+</head>
+<body>
+
+    <h1>Voyage to Neptune</h1>
+
+    <div id="neptune-info"></div>
+
+    <script>
+        // Function to fetch Neptune information from the Planets API
+        async function fetchNeptuneInfo() {
+            try {
+                const response = await fetch('https://api.api-ninjas.com/v1/planets?name=Neptune', {
+                    headers: { 'X-Api-Key': 'YOUR_API_KEY' } // Replace with your API key
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    displayNeptuneInfo(data[0]);
+                } else {
+                    throw new Error(`Error: ${response.status} - ${response.statusText}`);
+                }
+            } catch (error) {
+                console.error('Error fetching Neptune information:', error.message);
+            }
+        }
+
+        // Function to display Neptune information and calculate travel time
+        function displayNeptuneInfo(neptuneData) {
+            const neptuneInfoDiv = document.getElementById('neptune-info');
+            neptuneInfoDiv.innerHTML = `
+                <p>Name: ${neptuneData.name}</p>
+                <p>Distance from Earth: ${neptuneData.distance_light_year} light years</p>
+                <p>Estimated Travel Time at 25,000 km/h: ${calculateTravelTime(neptuneData.distance_light_year)} hours</p>
+                <button onclick="window.location.href='navigator.html'">Return to Planet Selection</button>
+            `;
+        }
+
+        // Function to calculate travel time based on distance and speed
+        function calculateTravelTime(distance) {
+            const speed = 25000; // Speed in km/h
+            const travelTime = distance * (1 / speed) * 60; // Travel time in hours
+            return travelTime.toFixed(2);
+        }
+
+        // Fetch Neptune information when the page loads
+        window.onload = fetchNeptuneInfo;
+    </script>
+
+</body>
+</html>
+
