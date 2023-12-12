@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose your destination and rocketship</title>
+    <title>Choose Your Destination - Interstellar Shuttles</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -25,30 +25,48 @@
             z-index: -1; /* Place the video behind other content */
         }
 
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            margin-top: 50px; /* Increase space between title and form */
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Ensure content is above video background */
+        }
+
         h1 {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 1; /* Place the title in front of the video */
+            margin-bottom: 20px;
+            color: #fff; /* White font color */
         }
 
-        div {
-            text-align: center;
-            margin-top: 50px;
+        h3 {
+            margin-top: 20px;
+            color: #fff; /* White font color */
+            cursor: pointer;
+            transition: color 0.3s; /* Add transition for font color */
         }
 
-        h2 {
-            text-align: center;
+        h3:hover {
+            color: #feda6a; /* Yellow font color on hover */
         }
 
-        img {
-            width: 300px; /* Set a specific width for the images */
-            height: auto;
-            display: block;
-            margin: 20px auto; /* Center the image */
-            /* You can add additional styling as needed */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for button */
+            color: #111; /* Dark font color for button */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s; /* Add transition for background color */
+            margin-top: 20px; /* Space between planets and button */
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.7); /* Slightly darker white on hover */
         }
     </style>
 </head>
@@ -59,25 +77,29 @@
         Your browser does not support the video tag.
     </video>
 
-    <h1>Choose your destination and rocketship</h1>
+    <div class="content">
+        <h1>Choose Your Destination</h1>
 
-    <div>
-        <h2>Rocketship 1</h2>
-        <img src="#" alt="Rocketship 1">
-        <!-- Replace "#" with the actual URL of the image -->
+        <h3>Mercury</h3>
+        <h3>Venus</h3>
+        <h3>Earth</h3>
+        <h3>Mars</h3>
+        <h3>Jupiter</h3>
+        <h3>Saturn</h3>
+        <h3>Uranus</h3>
+        <h3>Neptune</h3>
+        <h3>Pluto</h3>
+
+        <button onclick="cancelSelection()">Cancel</button>
     </div>
 
-    <div>
-        <h2>Rocketship 2</h2>
-        <img src="#" alt="Rocketship 2">
-        <!-- Replace "#" with the actual URL of the image -->
-    </div>
-
-    <div>
-        <h2>Rocketship 3</h2>
-        <img src="#" alt="Rocketship 3">
-        <!-- Replace "#" with the actual URL of the image -->
-    </div>
+    <script>
+        function cancelSelection() {
+            // Redirect to the home page
+            window.location.href = 'index.html';
+        }
+    </script>
 
 </body>
 </html>
+
