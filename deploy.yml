@@ -1,0 +1,30 @@
+name: Deploy Workflow
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+    
+      - name: Deploy to GitHub Pages
+        run: |
+          mkdir -p gh-pages
+          cp -r * gh-pages/
+          cd gh-pages
+          git init
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" master:gh-pages
+
+         
+
