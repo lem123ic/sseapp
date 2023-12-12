@@ -89,7 +89,7 @@
         </div>
     </div>
 
-    <script>
+   <script>
         async function fetchPlanetInfo(planetName) {
             try {
                 const response = await fetch(`https://api.api-ninjas.com/v1/planets?name=${planetName}`, {
@@ -105,7 +105,7 @@
                 const data = await response.json();
                 const planetInfo = data[0];
 
-                window.location.href = `planet_info.html?name=${planetInfo.name}&axis=${planetInfo.semi_major_axis}&distance=${planetInfo.distance_light_year}&temperature=${planetInfo.host_star_temperature}`;
+                window.location.href = `neptune_info.html?name=${planetInfo.name}&axis=${planetInfo.semi_major_axis}&distance=${planetInfo.distance_light_year}&temperature=${planetInfo.host_star_temperature}`;
             } catch (error) {
                 console.error(`Error fetching ${planetName} info:`, error);
             }

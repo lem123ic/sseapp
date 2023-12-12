@@ -74,16 +74,30 @@
     <div class="content">
         <h1>Voyage to Neptune</h1>
 
-        <p>Name: Neptune</p>
-        <p>Semi Major Axis: [Replace with value from URL]</p>
-        <p>Distance from Earth (Light Years): [Replace with value from URL]</p>
-        <p>Host Star Temperature: [Replace with value from URL]</p>
+        <p>Name: <span id="name">[Replace with value from URL]</span></p>
+        <p>Semi Major Axis: <span id="axis">[Replace with value from URL]</span></p>
+        <p>Distance from Earth (Light Years): <span id="distance">[Replace with value from URL]</span></p>
+        <p>Host Star Temperature: <span id="temperature">[Replace with value from URL]</span></p>
 
         <div>
             <button onclick="window.location.href='navigator.html'">Return to Planet Selection</button>
         </div>
     </div>
 
+    <script>
+        // Extract values from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name') || '';
+        const axis = urlParams.get('axis') || '';
+        const distance = urlParams.get('distance') || '';
+        const temperature = urlParams.get('temperature') || '';
+
+        // Populate the values in the HTML
+        document.getElementById('name').innerText = name;
+        document.getElementById('axis').innerText = axis;
+        document.getElementById('distance').innerText = distance;
+        document.getElementById('temperature').innerText = temperature;
+    </script>
+
 </body>
 </html>
-
