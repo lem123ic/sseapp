@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+    {% if user %}
+        <h2>Welcome back, {{ user[1] }}!</h2>
+        <p>Name: {{ user[1] }}</p>
+        <p>Age: {{ user[2] }}</p>
+        <!-- Add other user details here -->
+    {% elif not_found %}
+        <p>User not found. Please check the name.</p>
+    {% endif %}
+    <a href="{{ url_for('details') }}">Go back to details</a>
+</body>
+</html>

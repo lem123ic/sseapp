@@ -169,6 +169,26 @@
             </div>
         </form>
     </div>
+    <br>
+    <div>
+	    <form action="{{ url_for('submit_details') }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <!-- Add other form fields as needed -->
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <form action="{{ url_for('existing_user') }}" method="post">
+        <label for="existingUserName">Existing User Name:</label>
+        <input type="text" id="existingUserName" name="name" required>
+        <button type="submit">Existing User</button>
+    </form>
+    </div>
 
     <script>
         function cancelForm() {
